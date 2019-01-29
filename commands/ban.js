@@ -1,4 +1,10 @@
-module.exports = (message, args) => {
+exports.run = (client, message, args, permissions) => {
+
+  if (!permissions.has("BAN_MEMBERS")) {
+    message.reply("Not authorized, bruh!")
+    return
+  }
+
   const member = message.mentions.members.first() || message.guild.members.get(args[0])
 
   if (!member) {
@@ -9,7 +15,7 @@ module.exports = (message, args) => {
     return message.reply(`Can't ban this special ed.`)
   }
 
-  let reason = args.slice(2).join(' ')
+  let reason = args.slice(1).join(" ")
 
   if (!reason) reason = "No reason provided"
 
@@ -17,4 +23,10 @@ module.exports = (message, args) => {
     .ban(reason)
     .then(() => message.reply(`${member.user.tag} is banned. Reason: ${reason}.`))
     .catch(err => message.reply(`Error: ${err}. Try again, maybe.`))
+}
+
+exports.conf = {
+  name: "ban",
+  enabled: true,
+  guildOnly: false
 }
