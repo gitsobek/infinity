@@ -11,7 +11,7 @@ BOT_TOKEN=<put the token here>
 
 Project can be run for development in two different ways.
 - [Normal](#nodejs) (local NodeJS server)
-- [Docker](#docker) (via docker container)
+- [Docker](#docker) (via `docker-compose`)
 
 ### NodeJS
 ```bash
@@ -23,17 +23,20 @@ $ npm run dev
 ```
 
 ### Docker
-At first, make sure you have installed latest stable version of `docker`.
+At first, make sure you have installed latest stable version of `docker` and `docker-compose` packages in your system.
 
 Most of the times that's the only commands you'll need:
 
-- Building container
+- Running containers
   ```bash
-  $ docker build -t infinity-bot .
+  $ docker-compose up
   ```
-- Running container
+- Stopping containers
   ```bash
-  $ docker run -d infinity-bot
+  $ docker-compose stop
+- Rebuilding containers
+  ```bash
+  $ docker-compose up --build
   ```
 
 ## Production
@@ -42,5 +45,4 @@ This bot has not been deployed yet.
 
 ## Plans for the future
 
- - Use docker-compose,
- - Add possibility to play YouTube songs and add them to a queue.
+ - Add possibility to play YouTube songs and add them to a queue

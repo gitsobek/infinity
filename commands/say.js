@@ -1,6 +1,6 @@
 exports.run = (client, message, args, permissions) => {
   const typedMessage = args.join(" ")
-  message.delete().catch(notAnErr => {})
+  message.delete()
   message.channel.send(typedMessage)
 }
 

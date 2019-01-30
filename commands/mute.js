@@ -27,7 +27,7 @@ exports.run = async (client, message, args, permissions) => {
       message.guild.channels.forEach(async channel => {
         await channel.overwritePermissions(muteRole, {
           SEND_MESSAGES: false,
-          ADD_REACTIONS: false
+          SPEAK: false
         })
       })
     } catch (e) {

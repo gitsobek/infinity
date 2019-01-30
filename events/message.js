@@ -1,3 +1,5 @@
+const config = require('../config.json')
+
 module.exports = async (client, message) => {
 
     // Ignore other bots

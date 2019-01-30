@@ -1,0 +1,16 @@
+version: '2'
+services:
+  server:
+    container_name: infinity-bot
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    ports:
+      - 8060:8080
+    volumes:
+      - ./:/usr/src/infinity-bot
+    restart: always
+    environment:
+      NODE_ENV: "development"
+      PORT: 8080
+    command: npm run dev
