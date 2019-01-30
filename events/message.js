@@ -1,10 +1,3 @@
-const config = require('../config.json')
-const kick = require('../commands/kick')
-const ban = require('../commands/ban')
-const ping = require('../commands/ping')
-const help = require('../commands/help')
-const say = require('../commands/say')
-
 module.exports = async (client, message) => {
 
     // Ignore other bots
