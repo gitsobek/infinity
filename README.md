@@ -1,5 +1,7 @@
 # infinity
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/gitsobek/infinity.svg)](https://greenkeeper.io/)
+
 Discord Bot written in Node.js. This bot provides primitive and administrative functionalities.
 
 ## Build Setup
